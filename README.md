@@ -1,7 +1,8 @@
 
 ```mermaid
 graph LR
-    C["👤 Client"]
+    C["👤 Client
+    👤Frontend"]
     S["🌐 Backend"]
     DB["🗄️ PostgreSQL Database"]
     FS["📁 Local File Storage (/public)"]
@@ -15,7 +16,7 @@ graph LR
     S -->|"파일 저장(Multer)"| FS
     FS -->|"이미지 URL 제공"| C
 
-    C -->|"Static"| FS
+    C -->|"이미지 보기 요청"| FS
     S -->|"에러 발생 시 
     전역 에러 핸들러"| C
 ```
@@ -40,4 +41,5 @@ graph TD
 
     Curating -->|"1:1"| Comment
 ```
+
 

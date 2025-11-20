@@ -42,5 +42,36 @@ graph TD
     Curating -->|"1:1"| Comment
 ```
 
+```mermaid
+graph LR
+    Client["👤 Client
+    (Browser / Frontend)"]
+
+    Server["🌐 Backend
+    (Node.js / Express)"]
+    DB["🗄️ PostgreSQL Database
+    (RENDER)"]
+    Storage["📁 File Storage
+    (RENDER)"]
+
+    %% 일반 API 요청 흐름
+    Client -->|"HTTP 요청 (JSON)"| Server
+    Server -->|"CRUD 처리(Prisma)"| DB
+    DB -->|"데이터 응답"| Server
+    Server -->|"JSON 응답"| Client
+
+    %% 이미지 업로드 흐름
+    Client -->|"이미지 업로드"| Server
+    Server -->|"파일 저장(Multer)"| Storage
+    Storage -->|"이미지 URL 제공"| Client
+
+    %% 정적 파일 제공
+    Client -->|"이미지 보기 요청"| Storage
+
+    %% 에러 처리
+    Server -->|"에러 발생 시 전역 핸들러"| Client
+```
+
+
 
 

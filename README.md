@@ -5,7 +5,7 @@ graph LR
     👤Frontend"]
     S["🌐 Backend"]
     DB["🗄️ PostgreSQL Database"]
-    FS["📁 Local File Storage (/public)"]
+    FS["📁 Local File Storage"]
 
     C -->|"HTTP 요청"| S
     S -->|"CRUD 처리(Prisma)"| DB
@@ -41,5 +41,6 @@ graph TD
 
     Curating -->|"1:1"| Comment
 ```
+
 
 

@@ -69,8 +69,10 @@ graph LR
     Client -->|"이미지 보기 요청"| Storage
 
     %% 에러 처리
-    Server -->|"에러 발생 시 전역 핸들러"| Client
+    Server -->|"에러 발생 시
+    전역 핸들러"| Client
 ```
+
 
 
 

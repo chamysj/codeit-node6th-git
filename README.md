@@ -72,6 +72,27 @@ graph LR
     Server -->|"에러 발생 시
     전역 핸들러"| Client
 ```
+```mermaid
+graph TD
+    %% 노드 정의
+    Article["Article"]
+    Product["Product"]
+    Comment["Comment"]
+    User["User"]
+    Like["Like"]
+
+    %% 관계 정의 (라벨에 1:N, N:N, 1:1 표기)
+    User -->|"1:N"| Product
+    Like -->|"N:1 (optional)"| Article
+    Like -->|"N:1 (optional)"| Product
+    Comment -->|"N:1 (optional)"| Article
+    Comment -->|"N:1 (optional)"| Product
+    User -->|"1:N"| Article
+    User -->|"1:N"| Comment
+    User -->|"1:N"| Like
+```
+
+
 
 
 
